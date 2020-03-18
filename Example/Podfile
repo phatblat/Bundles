@@ -3,15 +3,16 @@
 # Bundles
 #
 
+platform :ios, '13.0'
 use_frameworks!
 
 target 'Bundles_Example' do
-  pod 'Bundles', :path => '../'
+  pod 'Bundles', path: '../'
 
   target 'Bundles_Tests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0'
+    pod 'Quick', '~> 2.2.0'
+    pod 'Nimble', '~> 8.0.5'
   end
 end

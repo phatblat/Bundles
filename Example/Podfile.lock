@@ -1,12 +1,12 @@
 PODS:
   - Bundles (0.1.0)
-  - Nimble (7.3.4)
-  - Quick (1.2.0)
+  - Nimble (8.0.5)
+  - Quick (2.2.0)
 
 DEPENDENCIES:
   - Bundles (from `../`)
-  - Nimble (~> 7.0)
-  - Quick (~> 1.2.0)
+  - Nimble (~> 8.0.5)
+  - Quick (~> 2.2.0)
 
 SPEC REPOS:
   trunk:
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Bundles: d06c7d538b877d7733589e75c4d2df2e09039ce4
-  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  Bundles: 41066a3693c19153b56f42c0d3966a4215edfa34
+  Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
-PODFILE CHECKSUM: b4eb248a7d1594d4ec350c55b83fb8bd7cba45f6
+PODFILE CHECKSUM: aed8a6e22f0b8c36eda37e7d610c7f68ea852ba4
 
 COCOAPODS: 1.9.1
