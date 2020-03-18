@@ -22,7 +22,7 @@ pod 'Bundles'
 
 ## Author
 
-phatblat, ben@octop.ad
+Ben Chatelain, ben@octop.ad
 
 ## License
 
