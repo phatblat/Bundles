@@ -1,14 +1,34 @@
-# references:
-# * https://www.objc.io/issues/6-build-tools/travis-ci/
-# * https://github.com/supermarin/xcpretty#usage
+#
+# .travis.yml
+# Bundles
+#
 
-osx_image: xcode7.3
-language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+# https://docs.travis-ci.com/user/build-config-validation
+version: ~> 1.0
+
+# https://docs.travis-ci.com/user/reference/osx/#macos-version
+os: osx
+osx_image: xcode11.3        # macOS 10.14
+
+env:
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+    - LANGUAGE=en_US.UTF-8
+#   matrix:
+#     - TASK=carthage
+#     - TASK=xcodebuild
+#     - TASK=podlint
+
+# Bundler 2
+# https://docs.travis-ci.com/user/languages/ruby/#bundler-20
+before_install:
+  - gem install bundler
+  - bundle install
+
+install:
+- bundle exec pod install --project-directory=Examplez
+
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Bundles.xcworkspace -scheme Bundles-Example -sdk iphonesimulator13.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
