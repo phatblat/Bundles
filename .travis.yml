@@ -30,5 +30,5 @@ install:
 - bundle exec pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Bundles.xcworkspace -scheme Bundles-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/Bundles.xcworkspace -scheme Bundles-Example -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" | xcpretty
 - pod lib lint
