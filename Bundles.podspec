@@ -24,4 +24,34 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.source_files = 'Bundles/Classes/**/*'
+
+  # FIXME: Generates warning
+  # https://github.com/CocoaPods/CocoaPods/issues/9536
+  # s.info_plist = {
+  #   'CFBundleIdentifier' => 'at.phatbl.Bundles'
+  # }
+
+  s.resources = 'Bundles/Assets/**/*.{icns,png}'
+  s.resource_bundles = {
+    'Secondary' => ['Bundles/Assets/**/*.{icns,png}'],
+    'Tertiary' => ['Bundles/Assets/**/*.{icns,png}']
+  }
+
+  s.app_spec 'SampleApp' do |app_spec|
+    app_spec.source_files = 'Example/Bundles/**/*.swift'
+  end
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.test_type = :unit
+    test_spec.requires_app_host = false
+    test_spec.source_files = 'Example/Tests/**/*.swift'
+    # test_spec.compiler_flags = '-DGDT_LOG_TRACE_ENABLED=1'
+    test_spec.dependency 'Quick'
+    test_spec.dependency 'Nimble'
+    test_spec.scheme = {
+      launch_arguments: [ 'arg1', 'arg2' ],
+      environment_variables: { 'FOO' => 'BAR' },
+      code_coverage: true
+    }
+  end
 end
