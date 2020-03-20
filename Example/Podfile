@@ -3,10 +3,17 @@
 # Bundles
 #
 
-platform :ios, '13.0'
+# http://blog.cocoapods.org/CocoaPods-1.7.0-beta/#multiple-xcodeproj-generation
+install! 'cocoapods',
+  generate_multiple_pod_projects: true,
+  incremental_installation: true
+
 use_frameworks!
+platform :ios, '13.0'
 
 target 'Bundles_Example' do
+  supports_swift_versions '>= 5.0'
+
   pod 'Bundles', path: '../'
 
   target 'Bundles_Tests' do
