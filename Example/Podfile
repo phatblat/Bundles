@@ -14,7 +14,7 @@ platform :ios, '13.0'
 target 'Bundles_Example' do
   supports_swift_versions '>= 5.0'
 
-  pod 'Bundles', path: '../'
+  pod 'Bundles', path: '../', testspecs: ['Tests']
 
   target 'Bundles_Tests' do
     inherit! :search_paths
